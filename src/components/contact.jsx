@@ -1,7 +1,7 @@
 import { useState } from "react";
 import emailjs from "emailjs-com";
 import React from "react";
-import { Book, Headset, Mail, Map, Phone, PhoneCall } from "lucide-react";
+import { Book, Headset, Mail, Map, Phone, PhoneCall, Notebook, NotebookIcon } from "lucide-react";
 
 const initialState = {
   name: "",
@@ -45,7 +45,7 @@ export const Contact = (props) => {
               <div className="section-title">
                 <h2>“برای شروع یک همکاری هوشمند آماده‌ایم”</h2>
                 <p>
-با پر کردن فریم زیر، در اسرع وقت با شما تماس میگیریم.
+با پر کردن فریم زیر، در اسرع وقت با شما تماس میگیریم
                 </p>
               </div>
               <form name="sentMessage" validate onSubmit={handleSubmit}>
@@ -116,6 +116,12 @@ export const Contact = (props) => {
                   <i className="fa "></i> شماره تماس
                 </span>{" "}
                 {props.data ? props.data.phone : "loading"}
+
+<br />
+<br />
+<NotebookIcon></NotebookIcon>
+                <i className="fa "></i> شناسه ملی
+                <span>14013970308</span>
               </p>
             </div>
             <div className="contact-item">
@@ -164,7 +170,7 @@ export const Contact = (props) => {
       <div id="footer">
         <div className="container text-center">
           <p>
-            تمامی حقوق برای شرکت مثلث فراز سپهر محفوظ است.
+            تمامی حقوق برای شرکت مثلث فراز سپهر محفوظ است
           </p>
         </div>
       </div>

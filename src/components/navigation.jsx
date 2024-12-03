@@ -1,4 +1,4 @@
-import { Triangle } from "lucide-react";
+import { Menu, Triangle } from "lucide-react";
 import React from "react";
 
 export const Navigation = (props) => {
@@ -12,18 +12,14 @@ export const Navigation = (props) => {
             data-toggle="collapse"
             data-target="#bs-example-navbar-collapse-1"
           >
-            {" "}
-            <span className="sr-only">Toggle navigation</span>{" "}
-            <span className="icon-bar"></span>{" "}
-            <span className="icon-bar"></span>{" "}
-            <span className="icon-bar"></span>{" "}
+              <Menu></Menu>
           </button>
           <a className="navbar-brand page-scroll" href="#page-top" style={{ transform : "translateY(0px)"}} >
           مثلث فراز سپهر ارتباطات 
 
           </a>{" "}
         </div>
-
+<img src="img/logo.jpg" className="logo"></img>
           <Triangle style={{ marginInline:2}} className="rotate" strokeWidth={4}></Triangle>
         <div
           className="collapse navbar-collapse"

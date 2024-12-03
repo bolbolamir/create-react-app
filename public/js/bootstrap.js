@@ -31,24 +31,7 @@ if (typeof jQuery === 'undefined') {
   // CSS TRANSITION SUPPORT (Shoutout: http://www.modernizr.com/)
   // ============================================================
 
-  function transitionEnd() {
-    var el = document.createElement('bootstrap')
 
-    var transEndEventNames = {
-      WebkitTransition : 'webkitTransitionEnd',
-      MozTransition    : 'transitionend',
-      OTransition      : 'oTransitionEnd otransitionend',
-      transition       : 'transitionend'
-    }
-
-    for (var name in transEndEventNames) {
-      if (el.style[name] !== undefined) {
-        return { end: transEndEventNames[name] }
-      }
-    }
-
-    return false // explicit for ie8 (  ._.)
-  }
 
   // http://blog.alexmaccaw.com/css-transitions
   $.fn.emulateTransitionEnd = function (duration) {
@@ -61,7 +44,7 @@ if (typeof jQuery === 'undefined') {
   }
 
   $(function () {
-    $.support.transition = transitionEnd()
+    // $.support.transition = transitionEnd()
 
     if (!$.support.transition) return
 
@@ -815,15 +798,6 @@ if (typeof jQuery === 'undefined') {
 
     clearMenus()
 
-    if (!isActive) {
-      if ('ontouchstart' in document.documentElement && !$parent.closest('.navbar-nav').length) {
-        // if mobile we use a backdrop because click events don't delegate
-        $(document.createElement('div'))
-          .addClass('dropdown-backdrop')
-          .insertAfter($(this))
-          .on('click', clearMenus)
-      }
-
       var relatedTarget = { relatedTarget: this }
       $parent.trigger(e = $.Event('show.bs.dropdown', relatedTarget))
 
@@ -1102,23 +1076,6 @@ if (typeof jQuery === 'undefined') {
     var that = this
     var animate = this.$element.hasClass('fade') ? 'fade' : ''
 
-    if (this.isShown && this.options.backdrop) {
-      var doAnimate = $.support.transition && animate
-
-      this.$backdrop = $(document.createElement('div'))
-        .addClass('modal-backdrop ' + animate)
-        .appendTo(this.$body)
-
-      this.$element.on('click.dismiss.bs.modal', $.proxy(function (e) {
-        if (this.ignoreBackdropClick) {
-          this.ignoreBackdropClick = false
-          return
-        }
-        if (e.target !== e.currentTarget) return
-        this.options.backdrop == 'static'
-          ? this.$element[0].focus()
-          : this.hide()
-      }, this))
 
       if (doAnimate) this.$backdrop[0].offsetWidth // force reflow
 
@@ -1190,15 +1147,6 @@ if (typeof jQuery === 'undefined') {
 
   Modal.prototype.resetScrollbar = function () {
     this.$body.css('padding-right', this.originalBodyPad)
-  }
-
-  Modal.prototype.measureScrollbar = function () { // thx walsh
-    var scrollDiv = document.createElement('div')
-    scrollDiv.className = 'modal-scrollbar-measure'
-    this.$body.append(scrollDiv)
-    var scrollbarWidth = scrollDiv.offsetWidth - scrollDiv.clientWidth
-    this.$body[0].removeChild(scrollDiv)
-    return scrollbarWidth
   }
 
 
