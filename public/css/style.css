@@ -643,6 +643,7 @@ label {
 
 /* Apply the animation to the element */
 .rotate, #rotating {
+  transform: translateX(-20px);
   animation: rotate 20s linear infinite;
 }
 

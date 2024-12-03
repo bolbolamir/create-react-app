@@ -19,8 +19,10 @@ export const Navigation = (props) => {
 
           </a>{" "}
         </div>
-<img src="img/logo.jpg" className="logo"></img>
-          <Triangle style={{ marginInline:2}} className="rotate" strokeWidth={4}></Triangle>
+        <img src="img/logo.jpg" className="logo"></img>
+        <span style={{transform : "translateX(-25px)"}}>
+            <Triangle style={{ marginInline:2}} className="rotate" strokeWidth={4}></Triangle>
+        </span>
         <div
           className="collapse navbar-collapse"
           id="bs-example-navbar-collapse-1"
