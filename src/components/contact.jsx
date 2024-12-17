@@ -45,7 +45,7 @@ export const Contact = (props) => {
               <div className="section-title">
                 <h2>“برای شروع یک همکاری هوشمند آماده‌ایم”</h2>
                 <p>
-با پر کردن فریم زیر، در اسرع وقت با شما تماس میگیریم
+با پر کردن فریم زیر، در اسرع وقت با شما تماس می گیریم
                 </p>
               </div>
               <form name="sentMessage" validate onSubmit={handleSubmit}>
@@ -111,14 +111,12 @@ export const Contact = (props) => {
             </div>
             <div className="contact-item">
               <p>
-                <span>
+                {/* <span>
                   <PhoneCall></PhoneCall>
                   <i className="fa "></i> شماره تماس
                 </span>{" "}
-                {props.data ? props.data.phone : "loading"}
+                {props.data ? props.data.phone : "loading"} */}
 
-<br />
-<br />
 <NotebookIcon></NotebookIcon>
                 <i className="fa "></i> شناسه ملی
                 <span>14013970308</span>
